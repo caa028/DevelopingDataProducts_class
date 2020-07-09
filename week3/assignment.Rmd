@@ -1,0 +1,23 @@
+---
+title: 'Week 3 Assignment: Markdown & Plotly'
+author: "Anatoly Andrianov"
+date: "7/9/2020"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(plotly)
+```
+
+## Plotly plot
+
+
+```{r cars, echo = FALSE, message=FALSE, warning=FALSE}
+plot_ly(mtcars, x = ~wt, y = ~mpg, type = "scatter",color = ~factor(cyl), size = ~disp)
+```
+
+
+## That's all
+
+Thank you!
