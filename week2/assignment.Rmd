@@ -1,0 +1,21 @@
+---
+title: 'Week 2 assignment: R Markdown and Leaflet'
+author: "Anatoly Andrianov"
+date: "7/9/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(leaflet)
+```
+
+
+##  Required date is **`r date()`**
+
+## And here is a fancy map
+```{r map, echo = FALSE}
+df <- data.frame(lat = runif(20, min = 42.08, max = 42.081), lon = runif(20, min = -88.071, max = -88.07))
+map <- df %>% leaflet() %>% addTiles() %>% addMarkers(clusterOptions = markerClusterOptions()) %>% addCircleMarkers()
+map
+```
