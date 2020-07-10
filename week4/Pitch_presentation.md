@@ -1,0 +1,60 @@
+Reproducible Pitch Presentation
+========================================================
+author: Anatoly Andrianov
+date: July 9, 2020
+autosize: true
+
+Second Slide - Slidify vs. RPresenter
+========================================================
+**Why not Slidify?**
+- Slidify.org web page has broken links
+- Course assignment page says "Slidify is no longer compatible with Rpubs"
+- To use slidify I need to install a whole bunch of libraries (content that I don't trust)
+- the only Slidify documentation available is a YouTube video with **VERY** annoying music
+
+***
+
+**Why not R Presenter**
+- there is a steep learning curve for R Presenter
+- there was nothing about R Presenter in the class lectures
+- we used something completely different in class assignments
+
+**Bottom line - assignment must be completed**
+
+Third slide with code from my shiny app
+========================================================
+
+
+```r
+# capture parameters of the simulation
+lambda <- 0.2
+n <- 40
+simulations <- 1000
+set.seed(123)
+
+# we will generate a matrix of 40 x 1000 exponentials and store it in a data frame
+# for future manipulations
+# each row in the data frame represents a simulation
+exponentials <- matrix(data = rexp(n * simulations, lambda),
+                       nrow = simulations, ncol = n)
+exponentialMeans <- data.frame(means = apply(exponentials, 1, mean))
+exponentialSds <- data.frame(sd = apply(exponentials, 1, sd))
+exponentialVars <- data.frame(var = apply(exponentials, 1, var))
+```
+
+Fourth slide with plot from my shiny app
+========================================================
+
+The following figure illustrates the relationship between theoretical mean of the distribution (marked by red line) and density distribution of sample means for 1000 simulations (40 exponentials each):
+
+***
+
+![plot of chunk mean4](Pitch_presentation-figure/mean4-1.png)
+
+Fifth slide
+========================================================
+
+
+**THE END**
+
+**Thank you**
